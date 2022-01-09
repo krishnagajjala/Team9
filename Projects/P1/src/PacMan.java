@@ -15,39 +15,39 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		
-		ArrayList<Location> validMoves = new ArrayList<Location>(); 
+		 ArrayList<Location> validMoves = new ArrayList<Location>();
 
-		//moving right
-		
-		if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) { 
-			
-			validMoves.add(myLoc.shift(1,0)); 
-		} 
+                //moving right
 
-		//moving left 
-		
-		else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) { 
-		
-			validMoves.add(myLoc.shift(-1,0));
- 		}	
+                if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
 
-		//moving up 
+                        validMoves.add(myLoc.shift(1,0));
+                }
 
-		else if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) { 
-		
-			validMoves.add(myLoc.shift(0,1));
-		}	
+                //moving left
 
-		//moving down 
-		
-		else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) { 
-		
-			validMoves.add(myLoc.shift(0,-1));
-		}
-	
+                else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
 
-		return validMoves;  		
+                        validMoves.add(myLoc.shift(-1,0));
+                }
+
+                //moving up
+
+                else if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
+
+                        validMoves.add(myLoc.shift(0,1));
+                }
+
+                //moving down
+
+                else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) {
+
+                        validMoves.add(myLoc.shift(0,-1));
+                }
+
+
+                return validMoves;
+		
 	}
 
 	public boolean move() {

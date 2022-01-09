@@ -13,7 +13,7 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
+		return null; 
 	}
 
 	public boolean move() {
