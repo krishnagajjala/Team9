@@ -18,7 +18,7 @@ public class Ghost{
 
                 //moving right
 
-                if (myMap.getLoc(myLoc.shift(1, 0)).contains(myMap.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(1,0));
                 }
