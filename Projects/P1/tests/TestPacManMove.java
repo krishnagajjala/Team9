@@ -18,7 +18,8 @@ public class TestPacManMove extends TestCase {
 		}
 	}
         PacMan pacman = frame.addPacMan(new Location(9, 11)); 
+		pacman.move();
 		assertFalse(pacman.myMap.getLoc(new Location(9,11)).contains(Map.Type.PACMAN)); 
-
 	}
 }
+

@@ -11,8 +11,10 @@ public class TestGhostMove extends TestCase {
        Ghost ghost = frame.addGhost(l, "ghost", Color.red);
 
        assertTrue(ghost.myMap.getLoc(l).contains(Map.Type.GHOST));
-
-
+       ghost.move();
+       assertFalse(ghost.myMap.getLoc(new Location(9, 11)).contains(Map.Type.GHOST));
 	
 	}
+
+
 }
