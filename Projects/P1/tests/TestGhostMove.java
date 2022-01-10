@@ -5,6 +5,16 @@ import java.io.*;
 public class TestGhostMove extends TestCase {
 
 	public void testGhostMove() throws FileNotFoundException{
+
+       Mainframe frame = new MainFrame();
+
+       frame.startGame(); 
+
+       Ghost ghost = frame.addGhost(new Location(9, 11), "ghost", Color.red);
+
+       assertTrue(ghost.MyLoc(9,12))
+
+
 	
 	}
 }
