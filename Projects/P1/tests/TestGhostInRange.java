@@ -12,14 +12,14 @@ public class TestGhostInRange extends TestCase {
 		int x = 25;
 		int y = 25;
 
-		Location above = new Location(this.myLoc.x, this.myLoc.y + 1);
-		Location below = new Location(this.myLoc.x, this.myLoc.y - 1);
-		Location left = new Location(this.myLoc.x - 1, this.myLoc.y);
-		Location right = new Location(this.myLoc.x + 1, this.myLoc.y);
-		Location upperLeft = new Location(this.myLoc.x - 1, this.myLoc.y + 1);
-		Location upperRight = new Location(this.myLoc.x + 1, this.myLoc.y + 1);
-		Location lowerLeft = new Location(this.myLoc.x - 1, this.myLoc.y - 1);
-		Location lowerRight = new Location(this.myLoc.x + 1, this.myLoc.y - 1);
+		Location above = new Location(x, y + 1);
+		Location below = new Location(x, y - 1);
+		Location left = new Location(x - 1, y);
+		Location right = new Location(x + 1, y);
+		Location upperLeft = new Location(x - 1, y + 1);
+		Location upperRight = new Location(x + 1, y + 1);
+		Location lowerLeft = new Location(x - 1, y - 1);
+		Location lowerRight = new Location(x + 1, y - 1);
 
 		//Creating Players
 		Ghost ghost = frame.addGhost(new Location(x, y), "name", Color.red); //Creates a red ghost named "name" at location x,y
