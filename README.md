@@ -15,6 +15,7 @@
 2. (assuming there were changes from the last compile) run the java compiler passing “src/” to the -cp flag and compiling every .java file in the src folder.
 3. run the StartMenu class with the java command and pass “src/” to the -cp flag and StartMenu which will open the menu and hit the start game button to begin
 
+
 Run the following code from the ```Team9/Projects/P1``` directory:
 ```
 git pull
@@ -22,10 +23,11 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
-## Running Tests From Command Line (With Code Block):
+### Running Tests From Command Line (With Code Block):
 1. If code has not been recently pulled from the main repository, run ```git pull``` to ensure all code is up to date.
 2. (assuming there were changes from the last compile) run the java compiler by passing the path for the Junit test files to the -cp flag and compiling every .java file (the files containing implemented functions and the files containing implemented Junit tests corresponding to implemented functions)
 3. Run the java file containing the JUnit test for the function you are testing by passing the path to the JUnit test files to the -cp flag along with the ```org.junit.runner.JUnitCore``` command to run a Junit test followed by the name of the compiled Junit test file you wish to run (for example ```TestPacmanInRange```)
+
 
 Run the following code from the ```Team9/Projects/P1``` directory:
 ```
