@@ -28,7 +28,7 @@ public class PacMan{
       myLoc = validPositions.get(0);
       return true;
     }
-
+     
   }
 	public boolean is_ghost_in_range() { 
 		return false;
