@@ -18,9 +18,9 @@ public class TestMapEatCookie {
 		Map map = frame.getMap();
 		assertNull(map.eatCookie("pacman"));
 
-		CookieComponent tok = new CookieComponent(location.x,location.y,scale);
+		CookieComponent tok = new CookieComponent(location.x,location.y, 20);
 		map.add("tok_x"+location.x+"_y"+location.y, location, tok, Map.Type.COOKIE);
-		add(tok);
+		frame.add(tok);
 		tok.setLocation(location.x, location.y);
 
 		assertNotNull(map.eatCookie("pacman"));
