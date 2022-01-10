@@ -6,12 +6,15 @@ public class TestPacManMove extends TestCase {
 
 	public void testPacManMove() throws FileNotFoundException{
         
-	 MainFrame frame = new MainFrame();  
-     
-       frame.startGame();   
+       MainFrame frame = new MainFrame();      
+
         Pac pacman = frame.addPacMan(new Location(9, 11)); 
 
-	assertTrue(pacman.myLoc(9,12)); 
+	pacman.move(); 
 
-	}
-}
+	assertFalse(pacman.myMap.getLoc(new Location(9, 11)).contains(Map.Type.PACMAN)); 
+
+  }
+
+ }
+
