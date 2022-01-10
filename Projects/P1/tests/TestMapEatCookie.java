@@ -16,14 +16,15 @@ public class TestMapEatCookie {
 		PacMan pacman = frame.addPacMan(location); //Creates PacMan at location x, y
 		
 		Map map = frame.getMap();
-		if(map.eatCookie("pacman") != null){
-			if( (map.getLoc(location)).contains(Map.Type.COOKIE) ){
-				assertTrue(true);
-			} else {
-				assertTrue(false);
-			}
-		}
-		assertTrue(true);
+		assertNull(map.eatCookie("pacman"));
+
+		CookieComponent tok = new CookieComponent(location.x,location.y,scale);
+		map.add("tok_x"+location.x+"_y"+location.y, location, tok, Map.Type.COOKIE);
+		add(tok);
+		tok.setLocation(location.x, location.y);
+
+		assertNotNull(map.eatCookie("pacman"));
+
 		//Start The Game
 		frame.startGame();
 	}
