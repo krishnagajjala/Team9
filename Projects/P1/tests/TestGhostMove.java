@@ -6,13 +6,11 @@ public class TestGhostMove extends TestCase {
 
 	public void testGhostMove() throws FileNotFoundException{
 
-       Mainframe frame = new MainFrame();
+       MainFrame frame = new MainFrame();
+       Location l = new Location(9, 11);
+       Ghost ghost = frame.addGhost(l, "ghost", Color.red);
 
-       frame.startGame(); 
-
-       Ghost ghost = frame.addGhost(new Location(9, 11), "ghost", Color.red);
-
-       assertTrue(ghost.MyLoc(9,12))
+       assertTrue(ghost.myMap.getLoc(l).contains(Map.Type.GHOST));
 
 
 	

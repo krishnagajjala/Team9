@@ -3,17 +3,16 @@ import java.awt.Color;
 import java.io.*;
 
 
-public class TestMapGetLoc {
+public class TestMapGetLoc extends TestCase {
 	
-	public void testMapGetLoc() {
+	public void testMapGetLoc() throws FileNotFoundException{
 
-	   Mainframe frame = new MainFrame();
+	   MainFrame frame = new MainFrame();
 
 	PacMan pacman = frame.addPacMan(new Location(9, 12));
 
-       frame.startGame();
 
-	assertTrue(map.getLoc(new Location (9,12)); 
+	assertTrue(pacman.myMap.getLoc(new Location (9,12)).contains(Map.Type.PACMAN)); 
 
 	}
 }

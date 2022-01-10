@@ -2,9 +2,9 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
-public class TestMapEatCookie {
+public class TestMapEatCookie extends TestCase {
 	
-	public void testMapEatCookie() {
-		return null;
+	public void testMapEatCookie() throws FileNotFoundException{
+		assertTrue(1==1);
 	}
 }

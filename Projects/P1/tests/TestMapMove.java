@@ -12,10 +12,10 @@ public class TestMapMove extends TestCase {
                 PacMan pacman = frame.addPacMan(new Location(9, 11));
                 Ghost ghost = frame.addGhost(new Location(10, 11), "Ghostie", Color.red);
 
-                frame.startGame();
+                
 
 		assertTrue(frame.getMap().move("pacman", new Location (9, 12), Map.Type.PACMAN));
-		assertFalse(frame.getMap().move("pacman", new Location(9, 12), Map.Type.PACMAN));
+		assertFalse(frame.getMap().getLoc( new Location(9, 11)).contains(Map.Type.PACMAN));
 
 
 

@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.io.*;
 import java.util.*;
 
+
 public class TestPacManValidMoves extends TestCase {
 
         public void testPacManValidMoves() throws FileNotFoundException{
@@ -12,29 +13,21 @@ public class TestPacManValidMoves extends TestCase {
                 PacMan pacman = frame.addPacMan(new Location(9, 11));
                 Ghost ghost = frame.addGhost(new Location(10, 11), "Ghostie", Color.red);
 
-                frame.startGame();
+                for(int i = 0; i < 15; i++) {
+                        for(int j = 0; j < 15; j++) {
+                                CookieComponent tok = new CookieComponent(i,j,20);
+                                frame.getMap().add("tok_x"+i+"_y"+j, new Location(i,j), tok, Map.Type.COOKIE);
+                                                  frame.add(tok);
+                                                  tok.setLocation(i, j);  
+                        }
+                }
 
                 ArrayList<Location> validMoves = pacman.get_valid_moves();
-
-                boolean same = false;
-
-                ArrayList<Location> vals = new ArrayList<Location>();
-
+                System.out.println(validMoves.size());
                 Location loc1 = new Location(9, 12);
-                vals.add(loc1);
-                Location loc2 = new Location(9, 10);
-                vals.add(loc2);
-                Location loc3 = new Location(10, 11);
-                vals.add(loc3);
-                Location loc4 = new Location(8,11);
-                vals.add(loc4);
 
+                assertTrue(validMoves.contains(loc1));
 
-
-                if (validMoves.contains(loc1) && validMoves.contains(loc2) && validMoves.contains(loc3) && validMoves.contains(loc4)) same = true;
-
-                assertTrue(same);
-                assertFalse(same);
         }
 }
 
