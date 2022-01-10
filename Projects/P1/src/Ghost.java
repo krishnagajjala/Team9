@@ -39,7 +39,7 @@ public class Ghost{
 		(this.myMap.getLoc(upperRight)).contains(Map.Type.PACMAN) ||
 		(this.myMap.getLoc(lowerLeft)).contains(Map.Type.PACMAN) ||
 		(this.myMap.getLoc(lowerRight)).contains(Map.Type.PACMAN) ||
-		(this.myMap.getLoc(this.location)).contains(Map.Type.PACMAN)
+		(this.myMap.getLoc(this.myLoc)).contains(Map.Type.PACMAN)
 		) {
 			return true;
 		} else {
