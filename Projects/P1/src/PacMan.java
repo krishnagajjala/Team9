@@ -21,15 +21,15 @@ public class PacMan{
     public boolean move() {
 
     ArrayList<Location> validPositions = this.get_valid_moves();
-    if(validPositions.isEmpty()){
+    
+     if(validPositions.isEmpty()){
       return false;
-    }else{
+    } else{
       myLoc = validPositions.get(0);
       return true;
     }
 
   }
-
 	public boolean is_ghost_in_range() { 
 		return false;
 	}
