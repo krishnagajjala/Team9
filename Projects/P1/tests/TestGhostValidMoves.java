@@ -1,22 +1,23 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*; 
+import java.util.*; 
 
 public class TestGhostValidMoves extends TestCase {
 
-	public void testGhostValidMoves() {
-		MainFrame frame = new MainFrame();
+	public void testGhostValidMoves() throws FileNotFoundException{
+		NoFrame frame = new NoFrame();
 		
 		PacMan pacman = frame.addPacMan(new Location(9, 11));
                 Ghost ghost = frame.addGhost(new Location(10, 11), "Ghostie", Color.red);
                 
 		frame.startGame();
 
-		validMoves = pacman.get_valid_moves();
+		ArrayList<Location> validMoves = pacman.get_valid_moves();
 
 		boolean same = false; 
 
-		ArrayList<Location> vals = new ArrayList<Integer>();
+		ArrayList<Location> vals = new ArrayList<Location>();
 		
 		Location loc1 = new Location(9, 12); 
 		vals.add(loc1);
@@ -31,7 +32,7 @@ public class TestGhostValidMoves extends TestCase {
 		
 		if (validMoves.contains(loc1) && validMoves.contains(loc2) && validMoves.contains(loc3) && validMoves.contains(loc4)) same = true; 
 
-		assertTrue(same == true);
-		assertFalse(same == false);
+		assertTrue(same);
+		assertFalse(same);
 	}
 }
