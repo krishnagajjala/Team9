@@ -7,13 +7,13 @@ public class TestMapGetLoc {
 	
 	public void testMapGetLoc() {
 
-	   Mainframe frame = new MainFrame();
+
+            MainFrame frame = new MainFrame();
 
 	PacMan pacman = frame.addPacMan(new Location(9, 12));
 
-       frame.startGame();
+	assertTrue(pacman.myMap.getLoc(new Location (9,12)).contains(Map.Type.PACMAN)); 
 
-	assertTrue(map.getLoc(new Location (9,12)); 
 
 	}
 }
