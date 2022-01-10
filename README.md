@@ -4,7 +4,9 @@
 
 ###      Ambika Sikri, Christopher Hasbani, Nila Karthikesan, Diya Thangada
 
-
+![startMenu]("./Projects/P1/src/assets/startMenu.jpg")
+![board]("./Projects/P1/src/assets/board.jpg")
+![gameOver]("./Projects/P1/src/assets/gameOver.jpg")
 
 How To Run Code From Command Line (With Code Block):
 1. Pull the code from the repository to ensure you are up to date.
