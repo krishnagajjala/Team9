@@ -50,10 +50,18 @@ public class PacMan{
 		
 	}
 
-	public boolean move() {
-		return false;
-	}
+    public boolean move() {
 
+    ArrayList<Location> validPositions = this.get_valid_moves();
+    
+     if(validPositions.isEmpty()){
+      return false;
+    } else{
+      myLoc = validPositions.get(0);
+      return true;
+    }
+     
+  }
 	public boolean is_ghost_in_range() { 
 		Location above = new Location(this.myLoc.x, this.myLoc.y + 1);
 		Location below = new Location(this.myLoc.x, this.myLoc.y - 1);
