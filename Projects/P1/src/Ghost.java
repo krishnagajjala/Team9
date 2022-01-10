@@ -16,6 +16,7 @@ public class Ghost{
 	
 		ArrayList<Location> validMoves = new ArrayList<Location>();
 
+
                 //moving right
 
                 if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
