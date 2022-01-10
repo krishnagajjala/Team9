@@ -13,7 +13,7 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-	
+			
 		ArrayList<Location> validMoves = new ArrayList<Location>();
 
                 //moving right
