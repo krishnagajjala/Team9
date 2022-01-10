@@ -42,7 +42,7 @@ javac -cp "tests/junit-4.10.jar;src/;tests/" src/*.java tests/*.java
 java -cp "tests/junit-4.10.jar;src/;tests/" org.junit.runner.JUnitCore TestPacmanInRange
 ```
 # Function Implementation
-***
+
 ### Ambika Sikri
 ***
 **PacMan: `get_valid_moves()`**
