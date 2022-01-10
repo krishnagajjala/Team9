@@ -19,28 +19,28 @@ public class PacMan{
 
                 //moving right
 
-                if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(1, 0)) != null && !myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(1,0));
                 }
 
                 //moving left
 
-                else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(-1, 0)) != null && !myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(-1,0));
                 }
 
                 //moving up
 
-                else if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(0, 1)) != null && !myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(0,1));
                 }
 
                 //moving down
 
-                else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(0, -1)) != null && !myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(0,-1));
                 }
@@ -57,7 +57,8 @@ public class PacMan{
      if(validPositions.isEmpty()){
       return false;
     } else{
-      myLoc = validPositions.get(0);
+		myLoc = validPositions.get((int) (Math.random() * validPositions.size()));
+		myMap.move(myName, myLoc, Map.Type.PACMAN);
       return true;
     }
      

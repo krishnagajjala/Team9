@@ -46,7 +46,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		scoreboard = new JLabel("Score: " + score);
 		scoreboard.setBounds(100, 500, 400, 50);	
 		scoreboard.setForeground(Color.YELLOW);
-		scoreboard.setFont (scoreboard.getFont ().deriveFont (32.0f));
+		scoreboard.setFont (scoreboard.getFont().deriveFont (32.0f));
 		add(scoreboard);
 		
 		close = new JButton("End Game");

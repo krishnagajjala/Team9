@@ -54,46 +54,55 @@ public class Map{
 		
 	public boolean move(String name, Location loc, Type type) {
 		//type: pacman 
-
-		if (type == Type.PACMAN) {
-			
+		if (type == Map.Type.PACMAN) {
 			//updating locations, components, and field
-			PacMan pac = new PacMan("pacman", loc, this);
-			PacManComponent pc = new PacManComponent(loc.x, loc.y, 20);
-			add(name, loc, pc, Type.PACMAN);
+			// PacMan pac = new PacMan("pacman", loc, this);
+			field.get(locations.get(name)).remove(Map.Type.PACMAN);
+			locations.put(name, loc);
+			components.get(name).setLocation(loc.x, loc.y);
+			if(field.get(loc) == null) {
+				field.put(loc, new HashSet<Type>());
+			}
+			field.get(loc).add(Map.Type.PACMAN);
 			
 			//moving pacman to new location, otherwise returning false
 
-			if (pac.move()) { 
+			// if (pac.move()) { 
 
-				pc.setLocation(loc.x, loc.y);
-			}
+			// 	// pc.setLocation(loc.x, loc.y);
+			// }
 
-			else {
-				return false; 
-			}
-
+			// else {
+			// 	// return false; 
+			// }
 
 		} 
 
 		//type: ghost 
 
-		else if (type == Type.GHOST) { 
+		else if (type == Map.Type.GHOST) { 
+			field.get(locations.get(name)).remove(Map.Type.GHOST);
+			locations.put(name, loc);
+			components.get(name).setLocation(loc.x, loc.y);
+			if(field.get(loc) == null) {
+				field.put(loc, new HashSet<Type>());
+			}
+			field.get(loc).add(Map.Type.GHOST);
 
 			//updating locations, components, and field 
-			Ghost ghost = new Ghost(name, loc, this); 
-			GhostComponent gcomp = new GhostComponent(loc.x, loc.y, 20);
-			add(name, loc, gcomp, Type.GHOST); 
+			// Ghost ghost = new Ghost(name, loc, this); 
+			// GhostComponent gcomp = new GhostComponent(loc.x, loc.y, 20);
+			// add(name, loc, gcomp, Type.GHOST); 
 
-			//moving ghost to new location, otherwise returning false 
+			// //moving ghost to new location, otherwise returning false 
 
-			if (ghost.move()) { 
-				gcomp.setLocation(loc.x, loc.y); 
-			}
+			// if (ghost.move()) { 
+			// 	gcomp.setLocation(loc.x, loc.y); 
+			// }
 
-			else { 
-				return false; 
-			}
+			// else { 
+			// 	return false; 
+			// }
 		}
 
 		return true; 
@@ -114,8 +123,16 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-		//update locations, components, field, and cookies
-		//the id for a cookie at (10, 1) is tok_x10_y1
+		if( (getLoc(this.locations.get(name)) != null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
+			Location thisLocation = this.locations.get(name);
+			field.get(thisLocation).remove(Map.Type.COOKIE);
+			JComponent returnValue = this.components.remove("tok_x"+thisLocation.x+"_y"+thisLocation.y);
+			// HashSet<Type> newSet = this.field.get(thisLocation);
+			// newSet.remove(Map.Type.COOKIE);
+			// this.field.replace(thisLocation, newSet);
+			this.cookies++;
+			return returnValue;
+		}
 		return null;
 	}
 }

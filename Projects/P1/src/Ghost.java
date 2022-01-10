@@ -13,39 +13,39 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-			
+
 		ArrayList<Location> validMoves = new ArrayList<Location>();
 
                 //moving right
 
-                if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
+				if (myMap.getLoc(myLoc.shift(1, 0)) != null && !myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) {
 
-                        validMoves.add(myLoc.shift(1,0));
-                }
+					validMoves.add(myLoc.shift(1,0));
+			}
 
-                //moving left
+			//moving left
 
-                else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
+			if (myMap.getLoc(myLoc.shift(-1, 0)) != null && !myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
 
-                        validMoves.add(myLoc.shift(-1,0));
-                }
+					validMoves.add(myLoc.shift(-1,0));
+			}
 
-                //moving up
+			//moving up
 
-                else if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
+			if (myMap.getLoc(myLoc.shift(0, 1)) != null && !myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
 
-                        validMoves.add(myLoc.shift(0,1));
-                }
+					validMoves.add(myLoc.shift(0,1));
+			}
 
-                //moving down
+			//moving down
 
-                else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) {
+			if (myMap.getLoc(myLoc.shift(0, -1)) != null && !myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) {
 
-                        validMoves.add(myLoc.shift(0,-1));
-                }
+					validMoves.add(myLoc.shift(0,-1));
+			}
 
 
-                return validMoves;
+			return validMoves;
         }
 
 	public boolean move(){
@@ -53,7 +53,8 @@ public class Ghost{
     if(validPositions.isEmpty()){
       return false;
     }else{
-      myLoc = validPositions.get(0);
+      myLoc = validPositions.get((int) (Math.random() * validPositions.size()));
+	  myMap.move(myName, myLoc, Map.Type.GHOST);
       return true;
     }
 
