@@ -6,6 +6,14 @@ import java.io.*;
 public class TestMapGetLoc {
 	
 	public void testMapGetLoc() {
-		return null;
+
+	   Mainframe frame = new MainFrame();
+
+	PacMan pacman = frame.addPacMan(new Location(9, 12));
+
+       frame.startGame();
+
+	assertTrue(map.getLoc(new Location (9,12)); 
+
 	}
 }
