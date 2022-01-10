@@ -13,7 +13,7 @@ public class TestGhostValidMoves extends TestCase {
                 
 		frame.startGame();
 
-		ArrayList<Location> validMoves = pacman.get_valid_moves();
+		ArrayList<Location> validMoves = ghost.get_valid_moves();
 
 		boolean same = false; 
 
