@@ -58,7 +58,12 @@ public class PacMan{
 		return false;
 	}
 
-	public JComponent consume() { 
- 		return null;
-	}
+	public JComponent consume() {
+		// check if map has cookie type in the set for that position 
+		if(this.myMap.getLoc(this.myLoc).contains(Map.Type.COOKIE)) {
+		  return myMap.eatCookie(this.myName);
+		} else {
+		  return null;      
+		}
+	  }
 }
