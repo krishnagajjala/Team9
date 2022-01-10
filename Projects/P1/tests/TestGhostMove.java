@@ -4,17 +4,15 @@ import java.io.*;
 
 public class TestGhostMove extends TestCase {
 
-	public void testGhostMove() throws FileNotFoundException{
+     public void testGhostMove() throws FileNotFoundException{
+	
+       MainFrame frame = new MainFrame();
 
-       Mainframe frame = new MainFrame();
-
-       frame.startGame(); 
-
-       Ghost ghost = frame.addGhost(new Location(9, 11), "ghost", Color.red);
-
-       assertTrue(ghost.MyLoc(9,12))
-
-
+         Ghost ghost = frame.addGhost(new Location(9, 11), "ghost", Color.red);
+        
+        assertFalse(ghost.myMap.getLoc(new Location(9, 11)).contains(Map.Type.GHOST));
 	
 	}
-}
+
+
+]
