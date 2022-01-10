@@ -13,6 +13,6 @@ public class TestMapAttack extends TestCase {
 		Ghost ghost = frame.addGhost(new Location(1, 2), "Bonnie", Color.red);
 		Ghost ghost1 = frame.addGhost(new Location(1, 6), "Clyde", Color.blue);
 		assertTrue(ghost.attack());	
-		assertFalse(ghost1.attack());	
+		assertTrue(frame.getMap().isGameOver());	
 	}
 }
