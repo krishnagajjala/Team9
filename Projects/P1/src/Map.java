@@ -75,7 +75,7 @@ public class Map{
 			// else {
 			// 	// return false; 
 			// }
-
+			return true; 
 		} 
 
 		//type: ghost 
@@ -103,9 +103,10 @@ public class Map{
 			// else { 
 			// 	return false; 
 			// }
+			return true; 
 		}
 
-		return true; 
+		return false;  
 	}
 	
      public HashSet<Type> getLoc(Location loc) {
