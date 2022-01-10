@@ -33,15 +33,15 @@ public class PacMan{
 		Location lowerRight = new Location(this.myLoc.x + 1, this.myLoc.y - 1);
 
 		if(
-		(this.myMap.getLoc(above)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(below)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(left)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(right)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(upperLeft)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(upperRight)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(lowerLeft)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(lowerRight)).contains(Map.Type.GHOST) ||
-		(this.myMap.getLoc(this.location)).contains(Map.Type.GHOST)
+		( (this.myMap.getLoc(above) != null) && (this.myMap.getLoc(above)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(below) != null) && (this.myMap.getLoc(below)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(left) != null) && (this.myMap.getLoc(left)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(right) != null) && (this.myMap.getLoc(right)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(upperLeft) != null) && (this.myMap.getLoc(upperLeft)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(upperRight) != null) && (this.myMap.getLoc(upperRight)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(lowerLeft) != null) && (this.myMap.getLoc(lowerLeft)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(lowerRight) != null) && (this.myMap.getLoc(lowerRight)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(this.myLoc) != null) && (this.myMap.getLoc(this.myLoc)).contains(Map.Type.GHOST) )
 		) {
 			return true;
 		} else {
