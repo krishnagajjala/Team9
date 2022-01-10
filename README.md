@@ -4,10 +4,9 @@
 
 ###      Ambika Sikri, Christopher Hasbani, Nila Karthikesan, Diya Thangada
 
+![](2022-01-10-14-20-00.png)
 ![](2022-01-10-14-14-54.png)
 ![](2022-01-10-14-17-30.png)
-![](2022-01-10-14-17-56.png)
-
 How To Run Code From Command Line (With Code Block):
 1. Pull the code from the repository to ensure you are up to date.
 2. (assuming there were changes from the last compile) run the java compiler passing “src/” to the -cp flag and compiling every .java file in the src folder.
