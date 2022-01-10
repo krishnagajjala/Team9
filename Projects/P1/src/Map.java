@@ -74,7 +74,7 @@ public class Map{
 		if( (getLoc(this.locations.get(name))).equals(Map.Type.COOKIE) ){
 			Location thisLocation = this.locations.remove(name);
 			JComponent returnValue = this.components.remove(name);
-			HashSet newSet = this.get(thisLocation);
+			HashSet newSet = this.field.get(thisLocation);
 			newSet.remove(Map.Type.COOKIE);
 			this.field.replace(thisLocation, newSet);
 			this.cookies++;
