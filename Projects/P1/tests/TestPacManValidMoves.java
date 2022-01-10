@@ -1,22 +1,40 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
-import Collections; 
+import java.util.*;  
 
 public class TestPacManValidMoves extends TestCase {
 
 	public void testPacManValidMoves() {
 		
-		NoFrame nf = new NoFrame(); 
-		ArrayList<Location> vals = new ArrayList<Integer>(); 
-		vals.add((9, 12));
-		vals.add((9, 10));
-		vals.add((10, 11));
-		vals.add((8,11));
-		Collections.sort(vals)
-		PacMan pacman = nf.addPacMan(new Location(9, 11));
+		 Mainframe frame = new MainFrame();
 
-		assertTrue(Collections.sort(pacman.get_valid_moves).equals(vals);	
+                PacMan pacman = frame.addPacMan(new Location(9, 11));
+                Ghost ghost = frame.addGhost(new Location(10, 11), "Ghostie", Color.red);
+
+                frame.startGame();
+
+                validMoves = pacman.getValidMoves();
+
+                bool same = false;
+
+                ArrayList<Location> vals = new ArrayList<Location>();
+
+                Location loc1 = new Location(9, 12);
+                vals.add(loc1);
+                Location loc2 = new Location(9, 10);
+                vals.add(loc2);
+                Location loc3 = new Location(10, 11);
+                vals.add(loc3);
+                Location loc4 = new Location(8,11);
+                vals.add(loc4);
+
+
+
+                if (validMoves.contains(loc1) && validMoves.contains(loc2) && validMoves.contains(loc3) && validMoves.contains(loc4)) same = true;
+
+                assertTrue(same);
+                assertFalse(same);	
 
 	}
 }
