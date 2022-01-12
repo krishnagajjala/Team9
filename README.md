@@ -2,7 +2,7 @@
 
 # Project 1: Pacman - Team 9’s Readme
 
-###      Ambika Sikri, Christopher Hasbani, Nila Karthikesan, Diya Thangada
+###       Ambika Sikri, Christopher Hasbani, Nila Karthikesan, Diya Thangada
 
 ![](2022-01-10-14-20-00.png)
 ![](2022-01-10-14-14-54.png)
