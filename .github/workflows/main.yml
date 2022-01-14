@@ -9,4 +9,4 @@ jobs:
       - working-directory: ./Projects/P1
       - name: Build Project 
         run: | 
-          javac *.java
+          javac -cp "src/" src/*.java
