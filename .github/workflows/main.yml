@@ -6,9 +6,7 @@ jobs:
     container: openjdk 
     steps: 
       - uses: actions/checkout@v2
+      - working-directory: ./Projects/P1
       - name: Build Project 
         run: | 
-          echo Project 2
-          java -version
-          javac -version
           javac *.java
