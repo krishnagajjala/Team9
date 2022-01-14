@@ -1,5 +1,5 @@
-name: CI
-on: [push, pull_request, workflow_dispatch]
+name: Team 9 CI
+on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest 
@@ -10,3 +10,4 @@ jobs:
       - name: Build Project 
         run: | 
           javac -cp "src/" src/*.java
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
