@@ -2,9 +2,9 @@ name: Team 9 CI
 on: [push, workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-latest 
-    container: openjdk 
-    steps: 
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
       - name: checkout Project
         uses: actions/checkout@v2
       - name: install openjdk
@@ -14,6 +14,12 @@ jobs:
           java-version: '17'
       - name: compile code and tests
         working-directory: ./Projects/P1
-        run: | 
+        run: |
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+      - name: run Chris's tests
+        working-directory: ./Projects/P1
+        run: |
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
