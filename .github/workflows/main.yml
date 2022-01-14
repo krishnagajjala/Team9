@@ -11,4 +11,4 @@ jobs:
           echo Project 2
           java -version
           javac -version
-          javac -cp "src/" src/*.java
+          javac *.java
