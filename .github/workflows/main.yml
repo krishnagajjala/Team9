@@ -5,9 +5,15 @@ jobs:
     runs-on: ubuntu-latest 
     container: openjdk 
     steps: 
-      - uses: actions/checkout@v2
-      - working-directory: ./Projects/P1
-      - name: Build Project 
+      - name: checkout Project
+        uses: actions/checkout@v2
+      - name: install openjdk
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+      - name: compile code and tests
+        working-directory: ./Projects/P1
         run: | 
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
