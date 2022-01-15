@@ -7,7 +7,7 @@ import java.util.*;
 public class TestGhostValidMoves extends TestCase {
 
 	public void testGhostValidMoves() throws FileNotFoundException{
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		
 		PacMan pacman = frame.addPacMan(new Location(9, 11));
     	Ghost ghost = frame.addGhost(new Location(10, 11), "Ghostie", Color.red);
