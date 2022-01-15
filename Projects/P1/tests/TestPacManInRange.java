@@ -6,7 +6,7 @@ public class TestPacManInRange extends TestCase {
 
 	public void testPacManInRange() throws FileNotFoundException{
 		//Creating A Map
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 		NoFrame noFrame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		int x = 25;
@@ -27,42 +27,42 @@ public class TestPacManInRange extends TestCase {
 		
 		Ghost aboveP = frame.addGhost(above, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());	
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost belowP = frame.addGhost(below, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost leftP = frame.addGhost(left, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost rightP = frame.addGhost(right, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost upperLeftP = frame.addGhost(upperLeft, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost upperRightP = frame.addGhost(upperRight, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost lowerLeftP = frame.addGhost(lowerLeft, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 		pacman = frame.addPacMan(new Location(x, y));
 
 		Ghost lowerRightP = frame.addGhost(lowerRight, "name", Color.red); //Creates a red ghost named "name" at location x,y
 		assertTrue(pacman.is_ghost_in_range());
-		frame = new MainFrame();
+		frame = new NoFrame();
 
 		//alternatively if you don't need the PacMan or Ghost objects in your tests
 		frame.initPlayers(); //Creates all of the players
