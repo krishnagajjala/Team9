@@ -124,7 +124,7 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-		if( (getLoc(this.locations.get(name)) != null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
+		if( (getLoc(this.locations.get(name)) == null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
 			Location thisLocation = this.locations.get(name);
 			field.get(thisLocation).remove(Map.Type.COOKIE);
 			JComponent returnValue = this.components.remove("tok_x"+thisLocation.x+"_y"+thisLocation.y);
