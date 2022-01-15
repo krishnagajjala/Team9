@@ -7,7 +7,7 @@ import java.util.*;
 public class TestPacManValidMoves extends TestCase {
 
         public void testPacManValidMoves() throws FileNotFoundException{
-                MainFrame frame = new MainFrame();
+                NoFrame frame = new NoFrame();
 
 
                 PacMan pacman = frame.addPacMan(new Location(9, 11));
@@ -17,8 +17,7 @@ public class TestPacManValidMoves extends TestCase {
                         for(int j = 0; j < 15; j++) {
                                 CookieComponent tok = new CookieComponent(i,j,20);
                                 frame.getMap().add("tok_x"+i+"_y"+j, new Location(i,j), tok, Map.Type.COOKIE);
-                                                  frame.add(tok);
-                                                  tok.setLocation(i, j);  
+                                	tok.setLocation(i, j);  
                         }
                 }
 
