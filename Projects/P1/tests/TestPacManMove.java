@@ -13,8 +13,10 @@ public class TestPacManMove extends TestCase {
 		for(int j = 0; j < 15; j++) {
 			CookieComponent tok = new CookieComponent(i,j,20);
 			frame.getMap().add("tok_x"+i+"_y"+j, new Location(i,j), tok, Map.Type.COOKIE);
+
 					
 					  tok.setLocation(i, j);  
+			
 		}
 	}
         PacMan pacman = frame.addPacMan(new Location(9, 11)); 

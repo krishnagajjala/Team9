@@ -15,7 +15,10 @@ public class TestGhostMove extends TestCase {
                         CookieComponent tok = new CookieComponent(i,j,20);
                         frame.getMap().add("tok_x"+i+"_y"+j, new Location(i,j), tok, Map.Type.COOKIE);
                                          
-                                          tok.setLocation(i, j);
+                                         
+
+                        	tok.setLocation(i, j);
+
                 }
         }
 
