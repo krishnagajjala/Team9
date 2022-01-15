@@ -2,9 +2,9 @@ name: Team 9 CI
 on: [push, workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-latest 
-    container: openjdk 
-    steps: 
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
       - name: checkout Project
         uses: actions/checkout@v2
       - name: install openjdk
@@ -14,17 +14,41 @@ jobs:
           java-version: '17'
       - name: compile code and tests
         working-directory: ./Projects/P1
-        run: | 
+        run: |
           javac -cp "src/" src/*.java
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-      - name: TestAttack
+      - name: TestPacManValidMoves
         working-directory: ./Projects/P1
         run: |
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
-      - name: TestConsume
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+      - name: TestGhostValidMoves
         working-directory: ./Projects/P1
         run: |
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
-      - name: TestMapAttack
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+      - name: TestMapMove
         working-directory: ./Projects/P1
-        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack actions-nila
+      - name: TestPacManMove
+        working-directory: ./Projects/P1
+        run: |
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+      - name: TestGhostMove
+        working-directory: ./Projects/P1
+        run: |
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+      - name: TestMapGetLoc
+        working-directory: ./Projects/P1
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+      - name: TestGhostInRange
+        working-directory: ./Projects/P1
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+      - name: TestMapEatCookie
+        working-directory: ./Projects/P1
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+      - name: TestPacManInRange
+        working-directory: ./Projects/P1
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+
