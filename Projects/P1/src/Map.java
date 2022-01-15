@@ -113,7 +113,7 @@ public class Map{
 
        HashSet<Type> returnValue = field.get(loc);
 
-       return returnValue;
+       return NULL;
 
 	}
 
