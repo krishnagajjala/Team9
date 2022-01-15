@@ -33,7 +33,7 @@ public class PacMan{
 
                 //moving up
 
-                if (myMap.getLoc(myLoc.shift(0, 1)) != null && !myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(0, 1)) != null && myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(0,1));
                 }
