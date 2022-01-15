@@ -8,7 +8,7 @@ public class TestPacManMove extends TestCase {
 
 	public void testPacManMove() throws FileNotFoundException{
         
-	 MainFrame frame = new MainFrame();  
+	 NoFrame frame = new NoFrame();  
 	for(int i = 0; i < 15; i++) {
 		for(int j = 0; j < 15; j++) {
 			CookieComponent tok = new CookieComponent(i,j,20);

@@ -6,7 +6,7 @@ public class TestGhostMove extends TestCase {
 
 	public void testGhostMove() throws FileNotFoundException{
 
-       MainFrame frame = new MainFrame();
+       NoFrame frame = new NoFrame();
        Location l = new Location(9, 11);
        Ghost ghost = frame.addGhost(l, "ghost", Color.red);
 
