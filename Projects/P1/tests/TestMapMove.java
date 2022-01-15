@@ -6,7 +6,7 @@ public class TestMapMove extends TestCase {
 
 	public void testMapMove() throws FileNotFoundException{
 		
-		NoFrame frame = new NoFrame();
+		MainFrame frame = new MainFrame();
 	
 
 
@@ -18,7 +18,7 @@ public class TestMapMove extends TestCase {
 		assertTrue(frame.getMap().move("pacman", new Location (9, 12), Map.Type.PACMAN));
 		assertFalse(frame.getMap().getLoc( new Location(9, 11)).contains(Map.Type.PACMAN));
 
-		assertTrue(frame.getMap().getLoc(new Location(9, 12)).contains(Map.Type.PACMAN));
+	assertTrue(frame.getMap().getLoc(new Location(9, 12)).contains(Map.Type.PACMAN));
 
 
 	}
