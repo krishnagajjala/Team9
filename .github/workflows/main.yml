@@ -27,7 +27,18 @@ jobs:
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
       - name: TestMapAttack
         working-directory: ./Projects/P1
-        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack actions-nila
+      - name: TestPacManMove
+        working-directory: ./Projects/P1
+        run: |
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+      - name: TestGhostMove
+        working-directory: ./Projects/P1
+        run: |
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+      - name: TestMapGetLoc
+        working-directory: ./Projects/P1
+        run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
       - name: TestGhostInRange
         working-directory: ./Projects/P1
         run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
@@ -37,4 +48,3 @@ jobs:
       - name: TestPacManInRange
         working-directory: ./Projects/P1
         run: java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
-
