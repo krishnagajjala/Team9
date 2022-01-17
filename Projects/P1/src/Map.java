@@ -117,9 +117,33 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		gameOver = true;
-		return false;
+		Location ghostLocation = locations.get(Name);
+		
+		Location above = new Location(ghostLocation.x, ghostLocation.y + 1);
+		Location below = new Location(ghostLocation.x, ghostLocation.y - 1);
+		Location left = new Location(ghostLocation.x - 1, ghostLocation.y);
+		Location right = new Location(ghostLocation.x + 1, ghostLocation.y);
+		Location upperLeft = new Location(ghostLocation.x - 1, ghostLocation.y + 1);
+		Location upperRight = new Location(ghostLocation.x + 1, ghostLocation.y + 1);
+		Location lowerLeft = new Location(ghostLocation.x - 1, ghostLocation.y - 1);
+		Location lowerRight = new Location(ghostLocation.x + 1, ghostLocation.y - 1);
+		
+		if(
+		( (field.get(above) != null) && (field.get(above)).contains(Map.Type.PACMAN) ) ||
+		( (field.get(below) != null) && (field.get(below)).contains(Map.Type.PACMAN) )||
+		( (field.get(left) != null) && (field.get(left)).contains(Map.Type.PACMAN) )||
+		( (field.get(right) != null) && (field.get(right)).contains(Map.Type.PACMAN) )||
+		( (field.get(upperLeft) != null) && (field.get(upperLeft)).contains(Map.Type.PACMAN) )||
+		( (field.get(upperRight) != null) && (field.get(upperRight)).contains(Map.Type.PACMAN) )||
+		( (field.get(lowerLeft) != null) && (field.get(lowerLeft)).contains(Map.Type.PACMAN) )||
+		( (field.get(lowerRight) != null) && (field.get(lowerRight)).contains(Map.Type.PACMAN) )||
+		( (field.get(ghostLocation) != null) && (field.get(ghostLocation)).contains(Map.Type.PACMAN) )
+		) {	
+			gameOver = true;
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public JComponent eatCookie(String name) {
