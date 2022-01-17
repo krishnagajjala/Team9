@@ -57,6 +57,7 @@ public class Map{
 		if (type == Map.Type.PACMAN) {
 			//updating locations, components, and field
 			// PacMan pac = new PacMan("pacman", loc, this);
+			field.get(locations.get(name)).remove(Map.Type.PACMAN);
 			locations.put(name, loc);
 			components.get(name).setLocation(loc.x, loc.y);
 			if(field.get(loc) == null) {
