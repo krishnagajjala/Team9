@@ -55,11 +55,11 @@ public class PacMan{
     ArrayList<Location> validPositions = this.get_valid_moves();
     
      if(validPositions.isEmpty()){
-      return true;
+      return false;
     } else{
 		myLoc = validPositions.get((int) (Math.random() * validPositions.size()));
 		myMap.move(myName, myLoc, Map.Type.PACMAN);
-      return false;
+      return true;
     }
      
   }
