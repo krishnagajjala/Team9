@@ -51,11 +51,11 @@ public class Ghost{
 	public boolean move(){
     ArrayList<Location> validPositions = this.get_valid_moves();
     if(validPositions.isEmpty()){
-      return true;
+      return false;
     }else{
       myLoc = validPositions.get((int) (Math.random() * validPositions.size()));
 	  myMap.move(myName, myLoc, Map.Type.GHOST);
-      return false;
+      return true;
     }
 
   }
