@@ -25,7 +25,7 @@ public class Ghost{
 
 			//moving left
 
-			if (myMap.getLoc(myLoc.shift(-1, 0)) != null && !myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
+			if (myMap.getLoc(myLoc.shift(-1, 0)) != null && myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) {
 
 					validMoves.add(myLoc.shift(-1,0));
 			}
@@ -51,11 +51,11 @@ public class Ghost{
 	public boolean move(){
     ArrayList<Location> validPositions = this.get_valid_moves();
     if(validPositions.isEmpty()){
-      return false;
+      return true;
     }else{
       myLoc = validPositions.get((int) (Math.random() * validPositions.size()));
 	  myMap.move(myName, myLoc, Map.Type.GHOST);
-      return true;
+      return false;
     }
 
   }
@@ -71,15 +71,15 @@ public class Ghost{
 		Location lowerRight = new Location(this.myLoc.x + 1, this.myLoc.y - 1);
 		
 		if(
-		( (this.myMap.getLoc(above) != null) && (this.myMap.getLoc(above)).contains(Map.Type.PACMAN) ) ||
-		( (this.myMap.getLoc(below) != null) && (this.myMap.getLoc(below)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(left) != null) && (this.myMap.getLoc(left)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(right) != null) && (this.myMap.getLoc(right)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(upperLeft) != null) && (this.myMap.getLoc(upperLeft)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(upperRight) != null) && (this.myMap.getLoc(upperRight)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(lowerLeft) != null) && (this.myMap.getLoc(lowerLeft)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(lowerRight) != null) && (this.myMap.getLoc(lowerRight)).contains(Map.Type.PACMAN) )||
-		( (this.myMap.getLoc(this.myLoc) != null) && (this.myMap.getLoc(this.myLoc)).contains(Map.Type.PACMAN) )
+		( (this.myMap.getLoc(above) == null) && (this.myMap.getLoc(above)).contains(Map.Type.PACMAN) ) ||
+		( (this.myMap.getLoc(below) == null) && (this.myMap.getLoc(below)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(left) == null) && (this.myMap.getLoc(left)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(right) == null) && (this.myMap.getLoc(right)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(upperLeft) == null) && (this.myMap.getLoc(upperLeft)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(upperRight) == null) && (this.myMap.getLoc(upperRight)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(lowerLeft) == null) && (this.myMap.getLoc(lowerLeft)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(lowerRight) == null) && (this.myMap.getLoc(lowerRight)).contains(Map.Type.PACMAN) )||
+		( (this.myMap.getLoc(this.myLoc) == null) && (this.myMap.getLoc(this.myLoc)).contains(Map.Type.PACMAN) )
 		) {
 			return true;
 		} else {
@@ -88,9 +88,9 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		if(is_pacman_in_range()) {
-			return this.myMap.attack(this.myName);
+		if(move()) {
+			return this.myMap.getCookies() != 0;
 		}
-		return false;
+		return true;
 	}
 }

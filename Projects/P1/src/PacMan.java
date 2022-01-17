@@ -33,7 +33,7 @@ public class PacMan{
 
                 //moving up
 
-                if (myMap.getLoc(myLoc.shift(0, 1)) != null && !myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
+                if (myMap.getLoc(myLoc.shift(0, 1)) != null && myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) {
 
                         validMoves.add(myLoc.shift(0,1));
                 }
@@ -55,11 +55,11 @@ public class PacMan{
     ArrayList<Location> validPositions = this.get_valid_moves();
     
      if(validPositions.isEmpty()){
-      return false;
+      return true;
     } else{
 		myLoc = validPositions.get((int) (Math.random() * validPositions.size()));
 		myMap.move(myName, myLoc, Map.Type.PACMAN);
-      return true;
+      return false;
     }
      
   }
@@ -74,15 +74,15 @@ public class PacMan{
 		Location lowerRight = new Location(this.myLoc.x + 1, this.myLoc.y - 1);
 
 		if(
-		( (this.myMap.getLoc(above) != null) && (this.myMap.getLoc(above)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(below) != null) && (this.myMap.getLoc(below)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(left) != null) && (this.myMap.getLoc(left)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(right) != null) && (this.myMap.getLoc(right)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(upperLeft) != null) && (this.myMap.getLoc(upperLeft)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(upperRight) != null) && (this.myMap.getLoc(upperRight)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(lowerLeft) != null) && (this.myMap.getLoc(lowerLeft)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(lowerRight) != null) && (this.myMap.getLoc(lowerRight)).contains(Map.Type.GHOST) )||
-		( (this.myMap.getLoc(this.myLoc) != null) && (this.myMap.getLoc(this.myLoc)).contains(Map.Type.GHOST) )
+		( (this.myMap.getLoc(above) == null) && (this.myMap.getLoc(above)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(below) == null) && (this.myMap.getLoc(below)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(left) == null) && (this.myMap.getLoc(left)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(right) == null) && (this.myMap.getLoc(right)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(upperLeft) == null) && (this.myMap.getLoc(upperLeft)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(upperRight) == null) && (this.myMap.getLoc(upperRight)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(lowerLeft) == null) && (this.myMap.getLoc(lowerLeft)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(lowerRight) == null) && (this.myMap.getLoc(lowerRight)).contains(Map.Type.GHOST) )||
+		( (this.myMap.getLoc(this.myLoc) == null) && (this.myMap.getLoc(this.myLoc)).contains(Map.Type.GHOST) )
 		) {
 			return true;
 		} else {
@@ -92,8 +92,8 @@ public class PacMan{
 
 	public JComponent consume() {
 		// check if map has cookie type in the set for that position 
-		if(this.myMap.getLoc(this.myLoc).contains(Map.Type.COOKIE)) {
-		  return myMap.eatCookie(this.myName);
+		if(this.myMap.getLoc(this.myLoc).isEmpty()) {
+		  return this.myMap.eatCookie(this.myName);
 		} else {
 		  return null;      
 		}

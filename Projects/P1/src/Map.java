@@ -57,7 +57,6 @@ public class Map{
 		if (type == Map.Type.PACMAN) {
 			//updating locations, components, and field
 			// PacMan pac = new PacMan("pacman", loc, this);
-			field.get(locations.get(name)).remove(Map.Type.PACMAN);
 			locations.put(name, loc);
 			components.get(name).setLocation(loc.x, loc.y);
 			if(field.get(loc) == null) {
@@ -113,18 +112,18 @@ public class Map{
 
        HashSet<Type> returnValue = field.get(loc);
 
-       return returnValue;
+       return null;
 
 	}
 
 	public boolean attack(String Name) {
 		//update gameOver
 		gameOver = true;
-		return true;
+		return false;
 	}
 	
 	public JComponent eatCookie(String name) {
-		if( (getLoc(this.locations.get(name)) != null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
+		if( (getLoc(this.locations.get(name)) == null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
 			Location thisLocation = this.locations.get(name);
 			field.get(thisLocation).remove(Map.Type.COOKIE);
 			JComponent returnValue = this.components.remove("tok_x"+thisLocation.x+"_y"+thisLocation.y);
