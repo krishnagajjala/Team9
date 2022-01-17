@@ -5,13 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
-      - name: checkout Project
         uses: actions/checkout@v2
-      - name: install openjdk
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: '17'
+      - name: build project
         working-directory: ./Projects/P1
         run: |
           javac -cp "src/" src/*.java
