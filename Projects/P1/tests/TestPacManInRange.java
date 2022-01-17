@@ -6,8 +6,9 @@ public class TestPacManInRange extends TestCase {
 
 	public void testPacManInRange() throws FileNotFoundException{
 		//Creating A Map
-		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
-		NoFrame noFrame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
+
+	//	MainFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		int x = 25;
 		int y = 25;
