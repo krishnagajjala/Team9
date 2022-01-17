@@ -9,6 +9,7 @@ public class TestMapMove extends TestCase {
 		NoFrame frame = new NoFrame();
 
 
+
         PacMan pacman = frame.addPacMan(new Location(9, 11));
         Ghost ghost = frame.addGhost(new Location(10, 11), "Ghostie", Color.red);
 
