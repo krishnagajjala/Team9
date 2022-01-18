@@ -92,10 +92,17 @@ public class PacMan{
 
 	public JComponent consume() {
 		// check if map has cookie type in the set for that position 
-		if(this.myMap.getLoc(this.myLoc).isEmpty()) {
-		  return this.myMap.eatCookie(this.myName);
-		} else {
-		  return null;      
-		}
+		// if(this.myMap.getLoc(this.myLoc).isEmpty()) {
+		//   return this.myMap.eatCookie(this.myName);
+		// } else {
+		//   return null;      
+		// }
+		if (this.myMap.getLoc(this.myLoc).contains(Map.Type.COOKIE)){
+			return myMap.eatCookie(this.myName);
+		 } else {
+			 return null;
+			//  return null;
+		 }
+
 	  }
 }

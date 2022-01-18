@@ -88,9 +88,15 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		if(move()) {
-			return this.myMap.getCookies() != 0;
-		}
-		return true;
+		if (this.is_pacman_in_range()){
+			this.myMap.attack(myName);
+			// return true;
+			return true;
+		} 
+		return false;
+		// if(move()) {
+		// 	return this.myMap.getCookies() != 0;
+		// }
+		// return true;
 	}
 }

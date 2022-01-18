@@ -148,16 +148,31 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-		if( (getLoc(this.locations.get(name)) == null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
-			Location thisLocation = this.locations.get(name);
-			field.get(thisLocation).remove(Map.Type.COOKIE);
-			JComponent returnValue = this.components.remove("tok_x"+thisLocation.x+"_y"+thisLocation.y);
-			// HashSet<Type> newSet = this.field.get(thisLocation);
-			// newSet.remove(Map.Type.COOKIE);
-			// this.field.replace(thisLocation, newSet);
-			this.cookies++;
-			return returnValue;
+		// if( (getLoc(this.locations.get(name)) == null) && (getLoc(this.locations.get(name))).contains(Map.Type.COOKIE) ){
+		// 	Location thisLocation = this.locations.get(name);
+		// 	field.get(thisLocation).remove(Map.Type.COOKIE);
+		// 	JComponent returnValue = this.components.remove("tok_x"+thisLocation.x+"_y"+thisLocation.y);
+		// 	// HashSet<Type> newSet = this.field.get(thisLocation);
+		// 	// newSet.remove(Map.Type.COOKIE);
+		// 	// this.field.replace(thisLocation, newSet);
+		// 	this.cookies++;
+		// 	return returnValue;
+		// }
+		// return null;
+
+				//update locations, components, field, and cookies
+		//the id for a cookie at (10, 1) is tok_x10_y1
+		Location location = locations.get(name);
+		String cookieName = "tok_x" + location.x + "_y" + location.y;
+		JComponent component = components.get(cookieName);
+
+		locations.remove(cookieName);
+		components.remove(cookieName);
+		field.get(location).remove(Map.Type.COOKIE);
+		if (field.get(location).isEmpty()){
+			field.get(location).add(Map.Type.EMPTY);
 		}
-		return null;
+		this.cookies += 1;
+		return component;
 	}
 }
